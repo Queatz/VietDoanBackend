@@ -9,5 +9,9 @@ import io.ktor.request.*
 fun Application.configureHTTP() {
     install(CORS) {
         anyHost()
+        allowSameOrigin = false
+        allowNonSimpleContentTypes = true
+        method(HttpMethod.Options)
+        method(HttpMethod.Get)
     }
 }
